@@ -1,15 +1,19 @@
 package com.workshopGruop.Workshop.domain.Entities;
 
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document(collection = "user")
 public class User  {
 
-    private String id;
+    @Id
+    private ObjectId id;
     private String name;
     private String email;
 
-    public User(String id, String name, String email) {
+    public User(ObjectId id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -17,16 +21,12 @@ public class User  {
 
 
 
-    @Override
-    public int hashCode() {
-        return id.hashCode();
-    }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -45,22 +45,6 @@ public class User  {
     public void setEmail(String email) {
         this.email = email;
     }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
 
-        return id.equals(user.id);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
 }
