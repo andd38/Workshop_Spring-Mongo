@@ -4,20 +4,20 @@ import com.workshopGruop.Workshop.domain.Entities.User;
 import org.bson.types.ObjectId;
 
 public class UserDTO {
-    private ObjectId id;
+    private String id;
     private String name;
     private String email;
     public UserDTO(User obj){
-        id =obj.getId();
+        id = obj.getId();
         name = obj.getName();
         email = obj.getEmail();
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
