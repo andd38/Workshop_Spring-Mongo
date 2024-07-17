@@ -3,7 +3,7 @@ package com.workshopGruop.Workshop.resources.exceptions;
 public class StandardError {
 
 
-    private Long timesstamp;
+    private Long timestamp;
     private Integer status;
     private String error;
     private String message;
@@ -13,20 +13,20 @@ public class StandardError {
 
     }
 
-    public StandardError(Long timesstamp, Integer status, String error, String message, String path) {
-        this.timesstamp = timesstamp;
+    public StandardError(Long timestamp, Integer status, String error, String message, String path) {
+        this.timestamp = timestamp;
         this.status = status;
         this.error = error;
         this.message = message;
         this.path = path;
     }
 
-    public Long getTimesstamp() {
-        return timesstamp;
+    public Long getTimestamp() {
+        return timestamp;
     }
 
-    public void setTimesstamp(Long timesstamp) {
-        this.timesstamp = timesstamp;
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Integer getStatus() {
