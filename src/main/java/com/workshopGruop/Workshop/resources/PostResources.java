@@ -4,6 +4,7 @@ package com.workshopGruop.Workshop.resources;
 import com.workshopGruop.Workshop.domain.Entities.Post;
 import com.workshopGruop.Workshop.domain.Entities.User;
 import com.workshopGruop.Workshop.dto.UserDTO;
+import com.workshopGruop.Workshop.resources.util.URL;
 import com.workshopGruop.Workshop.services.PostService;
 import com.workshopGruop.Workshop.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,13 @@ public class PostResources {
        return ResponseEntity.ok().body(obj);
     }
 
+    @GetMapping("/titlesearch")
+    public ResponseEntity<List<Post>> findByTitle(@RequestParam(value = "text",defaultValue = "") String text){
+        text= URL.decodeParam(text);
+        List<Post> list = postService.findByTitle(text);
+        return ResponseEntity.ok().body(list);
+
+    }
 
 
 }
